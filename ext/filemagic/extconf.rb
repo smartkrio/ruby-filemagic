@@ -1,14 +1,19 @@
 require 'mkmf'
 
+LIBDIR     = Config::CONFIG['libdir']
+INCLUDEDIR = Config::CONFIG['includedir']
+
 HEADER_DIRS = [
   '/opt/local/include', # MacPorts
   '/usr/local/include', # compiled from source and Homebrew
+  INCLUDEDIR,           # Ruby install locations
   '/usr/include',       # system
 ]
 
 LIB_DIRS = [
   '/opt/local/lib', # MacPorts
   '/usr/local/lib', # compiled from source and Homebrew
+  LIBDIR,           # Ruby install locations
   '/usr/lib',       # system
 ]
 
