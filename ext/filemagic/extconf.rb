@@ -1,15 +1,17 @@
 require 'mkmf'
 
 HEADER_DIRS = [
-  '/opt/local/include', # MacPorts
-  '/usr/local/include', # compiled from source and Homebrew
-  '/usr/include',       # system
+  '/opt/local/include',  # MacPorts
+  '/usr/local/include',  # compiled from source and Homebrew
+  '/usr/include',        # system
+  '/app/.apt/usr/iclude' # Heroku with heroku-buildpack-apt
 ]
 
 LIB_DIRS = [
-  '/opt/local/lib', # MacPorts
-  '/usr/local/lib', # compiled from source and Homebrew
-  '/usr/lib',       # system
+  '/opt/local/lib',                    # MacPorts
+  '/usr/local/lib',                    # compiled from source and Homebrew
+  '/usr/lib',                          # system
+  '/app/.apt/usr/lib/x86_64-linux-gnu' # Heroku with heroku-buildpack-apt
 ]
 
 $CFLAGS << ' -Wall' if ENV['WALL']
